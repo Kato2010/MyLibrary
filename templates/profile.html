@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="container bg-white rounded w-50 mt-3 mb-2 text-center">
+    <img width="500" height="300" src="/static/{{ userinfo['profile_image'] }}"/>
+    <table class="table">
+        <thead>
+        <th> Name:</th>
+        <td>{{ userinfo ["username"] }}</td>
+        </thead>
+        <tbody>
+
+        <tr>
+            <th> Gender:</th>
+            <td>{{ userinfo ["gender"] }}</td>
+        </tr>
+
+        <tr>
+            <th> Birthday:</th>
+            <td>{{ userinfo ["birthday"] }}</td>
+        </tr>
+
+        <tr>
+            <th> Country:</th>
+            <td>{{ userinfo ["country"] }}</td>
+        </tr>
+
+        <tr>
+            <th> Role:</th>
+            <td>{{ userinfo ["role"] }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="/edit_user/{{ userinfo['id'] }}" class="btn btn-warning">Edit</a>
+    <a href="/delete_user/{{ userinfo['id'] }}" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}

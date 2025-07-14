@@ -1,0 +1,32 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="container bg-white rounded w-50 mt-3 mb-2 text-center">
+    <div class="d-flex w-50 flex-column mx-auto">
+        <h2 class="mt-5">Please Sign up</h2><br>
+
+        <form method="post" enctype="multipart/form-data">
+
+            {{ form.hidden_tag() }}
+
+            {{ form.username (class="form-control mb-2", placeholder=form.username.label.text) }}
+            {{ form.password (class="form-control mb-2", placeholder=form.password.label.text) }}
+            {{ form.repeat_password (class="form-control mb-2", placeholder=form.repeat_password.label.text) }}
+
+            {{ form.birthday.label }}
+            {{ form.birthday (class="form-control mb-2") }}
+
+            {{ form.gender.label }}
+            {{ form.gender }}
+
+            {{ form.country.label }}
+            {{ form.country (class="form-select mb-2") }}
+
+            {{ form.profile_image.label }}
+            {{ form.profile_image(class="form-control") }}
+
+            {{ form.submit (class="mt-5 mb-3 btn btn-success") }}
+        </form>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="row align-items-start">
+    <div class="container text-center bg-primary-subtle my-5 ">
+        <div class="row align-items-start">
+            {% for book in books %}
+            <div class="col">
+                <img class="img1" src="/static/{{ book ['img'] }}" width="180" height="260"><br>
+                <label>{{ book ["name"] }}</label><br>
+                <label> Author: {{ book ["author"] }}</label><br>
+                <a class="btn btn-primary" href="/books/{{loop.index}}" role="button">see description</a>
+                <br><br><br>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,81 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="container bg-white rounded w-50 mt-3 mb-2 text-center">
+    <div class="d-flex w-50 flex-column mx-auto">
+        <h2 class="mt-5">Add Book</h2><br>
+
+        <form method="post" enctype="multipart/form-data">
+
+            {{ form.hidden_tag() }}
+
+            {{ form.book_name (class="form-control mb-2", placeholder=form.book_name.label.text) }}
+            {{ form.book_author (class="form-control mb-2", placeholder=form.book_author.label.text) }}
+            {{ form.book_description (class="form-control mb-2", placeholder=form.book_description.label.text) }}
+            {{ form.book_price (class="form-control mb-2", placeholder=form.book_price.label.text) }}
+            {{ form.book_price_in_coins (class="form-control mb-2", placeholder=form.book_price_in_coins.label.text) }}
+
+
+            {{ form.book_image.label }}
+            {{ form.book_image(class="form-control") }}
+
+            {{ form.book_pdf.label }}
+            {{ form.book_pdf(class="form-control") }}<br><br>
+
+            <h2 class="mb-5"> Book Quiz </h2>
+
+            <h5> Question 1 </h5><br>
+
+            {{ form.book_question1 (class="form-control mb-2", placeholder=form.book_question1.label.text) }}<br>
+            {{ form.book_answer11 (class="form-control mb-2", placeholder=form.book_answer11.label.text) }}
+            {{ form.book_answer12 (class="form-control mb-2", placeholder=form.book_answer12.label.text) }}
+            {{ form.book_answer13 (class="form-control mb-2", placeholder=form.book_answer13.label.text) }}
+            {{ form.book_answer14 (class="form-control mb-2", placeholder=form.book_answer14.label.text) }}
+            {{ form.correct_answer1.label }}
+            {{ form.correct_answer1 (class="form-control mb-2", placeholder=form.correct_answer1.label.text) }}<br>
+
+            <h5> Question 2 </h5><br>
+
+            {{ form.book_question2 (class="form-control mb-2", placeholder=form.book_question2.label.text) }}<br>
+            {{ form.book_answer21 (class="form-control mb-2", placeholder=form.book_answer21.label.text) }}
+            {{ form.book_answer22 (class="form-control mb-2", placeholder=form.book_answer22.label.text) }}
+            {{ form.book_answer23 (class="form-control mb-2", placeholder=form.book_answer23.label.text) }}
+            {{ form.book_answer24 (class="form-control mb-2", placeholder=form.book_answer24.label.text) }}
+            {{ form.correct_answer2.label }}
+            {{ form.correct_answer2 (class="form-control mb-2", placeholder=form.correct_answer2.label.text) }}<br>
+
+            <h5> Question 3 </h5><br>
+
+            {{ form.book_question3 (class="form-control mb-2", placeholder=form.book_question3.label.text) }}<br>
+            {{ form.book_answer31 (class="form-control mb-2", placeholder=form.book_answer31.label.text) }}
+            {{ form.book_answer32 (class="form-control mb-2", placeholder=form.book_answer32.label.text) }}
+            {{ form.book_answer33 (class="form-control mb-2", placeholder=form.book_answer33.label.text) }}
+            {{ form.book_answer34 (class="form-control mb-2", placeholder=form.book_answer34.label.text) }}
+            {{ form.correct_answer3.label }}
+            {{ form.correct_answer3 (class="form-control mb-2", placeholder=form.correct_answer3.label.text) }}<br>
+
+            <h5> Question 4 </h5><br>
+
+            {{ form.book_question4 (class="form-control mb-2", placeholder=form.book_question4.label.text) }}<br>
+            {{ form.book_answer41 (class="form-control mb-2", placeholder=form.book_answer41.label.text) }}
+            {{ form.book_answer42 (class="form-control mb-2", placeholder=form.book_answer42.label.text) }}
+            {{ form.book_answer43 (class="form-control mb-2", placeholder=form.book_answer43.label.text) }}
+            {{ form.book_answer44 (class="form-control mb-2", placeholder=form.book_answer44.label.text) }}
+            {{ form.correct_answer4.label }}
+            {{ form.correct_answer4 (class="form-control mb-2", placeholder=form.correct_answer4.label.text) }}<br>
+
+            <h5> Question 5 </h5><br>
+
+            {{ form.book_question5 (class="form-control mb-2", placeholder=form.book_question5.label.text) }}
+            {{ form.book_answer51 (class="form-control mb-2", placeholder=form.book_answer51.label.text) }}
+            {{ form.book_answer52 (class="form-control mb-2", placeholder=form.book_answer52.label.text) }}
+            {{ form.book_answer53 (class="form-control mb-2", placeholder=form.book_answer53.label.text) }}
+            {{ form.book_answer54 (class="form-control mb-2", placeholder=form.book_answer54.label.text) }}
+            {{ form.correct_answer5.label }}
+            {{ form.correct_answer5 (class="form-control mb-2", placeholder=form.correct_answer5.label.text) }}<br>
+
+            {{ form.submit (class="mt-2 mb-3 btn btn-success") }}
+        </form>
+    </div>
+</div>
+{%endblock%}

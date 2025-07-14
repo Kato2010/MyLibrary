@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container bg-white rounded w-50 mt-3 mb-2 text-center">
+    <h3 class="mt-5">Quiz Finished</h3><br><br>
+    <p>Your score is: {{score}}/5</p><br>
+    <p class="mb-5">You have earned {{coins_add}} coins</p>
+    <a class="btn btn-info my-5" href="/" role="button">Return to home page</a><br>
+</div>
+{% endblock %}

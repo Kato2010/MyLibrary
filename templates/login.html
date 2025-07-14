@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-danger">
+    *{{ message }}
+</div>
+{% endfor %}
+
+<div class="container bg-white rounded w-50 mt-3 mb-2 text-center">
+    <div class="d-flex w-50 flex-column mx-auto">
+        <h2 class="mt-5">Please login</h2><br>
+
+        <form method="post">
+
+            {{ form.hidden_tag() }}
+
+            {{ form.username (class="form-control mb-2", placeholder=form.username.label.text) }}
+            {{ form.password (class="form-control mb-2", placeholder=form.password.label.text) }}
+
+
+            {{ form.submit (class="mt-5 mb-3 btn btn-success") }}
+        </form>
+    </div>
+</div>
+{%endblock%}

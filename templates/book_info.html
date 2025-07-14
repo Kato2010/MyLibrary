@@ -1,0 +1,58 @@
+{%extends "base.html"%}
+{%block content%}
+{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashed-messages">
+                    {% for category, message in messages %}
+                        <div class="alert {{ category }}" role="alert">{{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+<div class="container bg-white rounded mt-3 mb-2 text-center">
+    <div class="my-4 mx-4">
+    <div class="row">
+        <div class="col">
+            <img class="mt-5 my-5" src="/static/{{informacia['img']}}" width="350" height="500">
+        </div>
+        <div class="col">
+            <h3>{{informacia['name']}}</h3><br>
+            <p>Author: {{informacia['author']}}</p>
+            <p>{{informacia['description']}}</p><br><br>
+            <p>Price: {{informacia['price']}} $ </p>
+            <p>Price: {{informacia['price_in_coins']}} coins </p><br>
+
+            {% if current_user.is_authenticated and not book_owned %}
+
+            <a class="btn btn-success mx-2" href="/buy_book_money/{{informacia['id']}}">Buy with money</a>
+            <a class="btn btn-success mx-2" href="/buy_book/{{informacia['id']}}">Buy with coins</a><br><br>
+
+            {%endif%}
+
+            {% if current_user.is_authenticated %}
+
+                {% if current_user.role == "admin" %}
+
+                    <a href="/quiz/{{informacia['id']}}/0" class="btn btn-info my-2">Take a Quiz</a><br>
+                    <a href="/downloads/{{informacia['id']}}" class="btn btn-primary my-2">Download PDF</a><br>
+                    <a href="/edit_book/{{ informacia['id'] }}" class="btn btn-warning mb-5">Edit</a>
+                    <a href="/delete_book/{{ informacia['id'] }}" class="btn btn-danger mb-5">Delete</a>
+
+                {% elif not quiz_passed %}
+
+                    <a href="/quiz/{{informacia['id']}}/0" class="btn btn-info my-2">Take a Quiz</a><br>
+
+                {%endif%}
+
+                {% if book_owned and current_user.role != "admin" %}
+
+                    <a href="/downloads/{{informacia['id']}}" class="btn btn-primary my-2">Download PDF</a><br>
+
+                {%endif%}
+
+            {%endif%}
+        </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
